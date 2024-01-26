@@ -617,3 +617,205 @@ printf("EMS: %d\n",ElapsedMicroseconds.QuadPart);*/
   }
 }*/
 
+
+
+
+HBITMAP CreateBitmapMask(HBITMAP hbmColour, COLORREF crTransparent)
+{
+    HDC hdcMem, hdcMem2;
+    HBITMAP hbmMask;
+    BITMAP bm;
+
+    // Create monochrome (1 bit) mask bitmap.  
+
+    GetObject(hbmColour, sizeof(BITMAP), &bm);
+    hbmMask = CreateBitmap(bm.bmWidth, bm.bmHeight, 1, 1, NULL);
+
+    // Get some HDCs that are compatible with the display driver
+
+    hdcMem = CreateCompatibleDC(0);
+    hdcMem2 = CreateCompatibleDC(0);
+
+    SelectBitmap(hdcMem, hbmColour);
+    SelectBitmap(hdcMem2, hbmMask);
+
+    // Set the background colour of the colour image to the colour
+    // you want to be transparent.
+    SetBkColor(hdcMem, crTransparent);
+
+    // Copy the bits from the colour image to the B+W mask... everything
+    // with the background colour ends up white while everythig else ends up
+    // black...Just what we wanted.
+
+    BitBlt(hdcMem2, 0, 0, bm.bmWidth, bm.bmHeight, hdcMem, 0, 0, SRCCOPY);
+
+    // Take our new mask and use it to turn the transparent colour in our
+    // original colour image to black so the transparency effect will
+    // work right.
+    BitBlt(hdcMem, 0, 0, bm.bmWidth, bm.bmHeight, hdcMem2, 0, 0, SRCINVERT);
+
+    // Clean up.
+
+    DeleteDC(hdcMem);
+    DeleteDC(hdcMem2);
+
+    return hbmMask;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*void DrawTriFill(HWND hwnd, HDC hdc, PAINTSTRUCT ps,int tri_color,double x1,double y1,double x2,double y2,double x3,double y3)
+{
+  double x_1,x_2,
+      gradient_middle1,gradient_middle2,gradient_largest,
+      c_middle1,c_middle2,c_largest,
+      smallest=9999,largest=0,
+      x_arr[3],y_arr[3];
+  x_arr[0]=x1;
+  x_arr[1]=x2;
+  x_arr[2]=x3;
+  y_arr[0]=y1;
+  y_arr[1]=y2;
+  y_arr[2]=y3;
+  int i,saved_largest=0,saved_smallest=0,saved_middle=0;
+  for (i=0;i<3;i++) {
+    if (y_arr[i]<smallest) {
+      smallest=y_arr[i];
+      saved_smallest=i;
+    }
+  }
+  for (i=0;i<3;i++) {
+    if (y_arr[i]>largest) {
+      largest=y_arr[i];
+      saved_largest=i;
+    }
+  }
+  for (i=0;i<3;i++) {
+    if (i!=saved_smallest && i!=saved_largest) {
+      saved_middle=i;
+    }
+  }
+  gradient_middle1=GetGradient(x_arr[saved_smallest],y_arr[saved_smallest],x_arr[saved_middle],y_arr[saved_middle]); //Gradient of main line
+  c_middle1=GetGroundC(x_arr[saved_smallest],y_arr[saved_smallest],gradient_middle1);
+
+  gradient_middle2=GetGradient(x_arr[saved_largest],y_arr[saved_largest],x_arr[saved_middle],y_arr[saved_middle]);
+  c_middle2=GetGroundC(x_arr[saved_largest],y_arr[saved_largest],gradient_middle2);
+
+  gradient_largest=GetGradient(x_arr[saved_largest],y_arr[saved_largest],x_arr[saved_smallest],y_arr[saved_smallest]);
+  c_largest=GetGroundC(x_arr[saved_smallest],y_arr[saved_smallest],gradient_largest);
+  for (i=smallest;i<y_arr[saved_middle];i+=1) {//small to middle
+    x_1=GetX(i,gradient_middle1,c_middle1);
+    x_2=GetX(i,gradient_largest,c_largest);
+    GrLine(hwnd,hdc,ps,x_1,i,x_2,i,tri_color);
+  }
+  for (i=y_arr[saved_middle];i<largest;i+=1) {//middle to largest
+    x_1=GetX(i,gradient_middle2,c_middle2);
+    x_2=GetX(i,gradient_largest,c_largest);
+    GrLine(hwnd,hdc,ps,x_1,i,x_2,i,tri_color);
+  }
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*player.valid_web=FALSE;
+        pivot_node_grid_id=GetGridId(player.above_x,player.above_y,MAP_WIDTH,NODE_SIZE,MAP_NODE_NUM);
+        pivot_x=NodeGrid[pivot_node_grid_id].x1+NODE_SIZE/2;
+        pivot_y=NodeGrid[pivot_node_grid_id].y1+NODE_SIZE/2;
+        edge_x=NodeGrid[edge_node_grid_id].x1+NODE_SIZE/2;
+        edge_y=NodeGrid[edge_node_grid_id].y1+NODE_SIZE/2;
+        if (pivot_x<edge_x) {
+          bm_x1=pivot_x;
+          bm_y1=pivot_y;
+          bm_x2=edge_x;
+          bm_y2=edge_y;
+        } else {
+          bm_x1=edge_x;
+          bm_y1=edge_y;
+          bm_x2=pivot_x;
+          bm_y2=pivot_y;
+        }
+        bm_gradient=GetGradient(bm_x1,bm_y1,bm_x2,bm_y2);
+        allow_act=FALSE;
+        if (player.bullet_shot==-1) {
+          if (GetDistance(pivot_x,pivot_y,edge_x,edge_y)<=DEFAULT_PLAYER_SHORT_BUILD_RANGE*NODE_SIZE
+	    && !IsCollideSolid(bm_x1,bm_y1,bm_x2,bm_y2,bm_gradient,GetGroundC(bm_x1,bm_y1,bm_gradient))
+	        ) {
+	        if (!IsCollideCrawler(bm_x1,bm_y1,bm_x2,bm_y2,bm_gradient,GetGroundC(bm_x1,bm_y1,bm_gradient))
+              && pivot_x!=edge_x) {
+	          allow_act=TRUE;
+	        }
+	      }
+        }
+      //^^ condition
+        if (allow_act) {
+          player.valid_web=
+    	  player.print_valid_web=TRUE;
+        } else {
+    	  player.print_valid_web=FALSE;
+        }    
+        allow_act=FALSE;
+        if (player.on_ground_id!=-1 && player.placed_web_num<player.max_web_num) {
+    	  allow_act=TRUE;
+        }
+        if (player.right_click_hold_timer==62 && allow_act) {//Right click to shoot
+          if (player.valid_web) {//place web
+            player.attack=TRUE;
+    	    player.valid_web=FALSE;
+            if (player.placed_web_pos<player.max_web_num) {      
+              while (player.web_storage[player.placed_web_pos]==-1) {
+                player.placed_web_pos=LimitValue(player.placed_web_pos+1,0,player.max_web_num);
+              }
+              web_id=player.web_storage[player.placed_web_pos];
+              if (web_id!=-1) {
+                Ground[web_id].x1=bm_x1;
+                Ground[web_id].y1=bm_y1;
+                Ground[web_id].x2=bm_x2;
+                Ground[web_id].y2=bm_y2;
+                SetGround(web_id);
+                SetNodeGridAttributes(web_id);
+    	        Ground[web_id].health=5;
+                player.web_storage[player.placed_web_pos]=-1;
+                player.placed_web_pos++;
+    	        player.placed_web_num++;
+    	     }
+	         if (player.placed_web_pos>=player.max_web_num) {
+	           player.placed_web_pos=0;
+	         }
+           }
+         }
+       }*/
+
+
+
