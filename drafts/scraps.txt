@@ -819,3 +819,214 @@ HBITMAP CreateBitmapMask(HBITMAP hbmColour, COLORREF crTransparent)
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      //=====JUST A DEMO=====
+      //Load Player cache Sprites
+      /*SetRotatedSpriteSize(
+        NULL,
+        player.sprite_1,
+        0,
+        &player.sprite_minx,
+        &player.sprite_miny,
+        &player.sprite_maxx,
+        &player.sprite_maxy,
+        &player.sprite_width,
+        &player.sprite_height
+      );*/
+
+
+
+      /*unsigned char* lpBitmapBits2; 
+
+      BITMAPINFO bi2; 
+      ZeroMemory(&bi2, sizeof(BITMAPINFO));
+      bi2.bmiHeader.biSize=sizeof(BITMAPINFOHEADER);
+      bi2.bmiHeader.biWidth=player.sprite_width;
+      bi2.bmiHeader.biHeight=-player.sprite_height;
+      bi2.bmiHeader.biPlanes=1;
+      bi2.bmiHeader.biBitCount=32;
+
+      player.sprite_jump_cache=CreateDIBSection(NULL,&bi2,DIB_RGB_COLORS, (VOID**)&lpBitmapBits2,NULL,0);
+      player.sprite_1_cache=CreateDIBSection(NULL,&bi2,DIB_RGB_COLORS, (VOID**)&lpBitmapBits2,NULL,0);
+      player.sprite_2_cache=CreateDIBSection(NULL,&bi2,DIB_RGB_COLORS, (VOID**)&lpBitmapBits2,NULL,0);
+
+      player.attack_sprite_1_cache=CreateDIBSection(NULL,&bi2,DIB_RGB_COLORS, (VOID**)&lpBitmapBits2,NULL,0);
+      player.attack_sprite_2_cache=CreateDIBSection(NULL,&bi2,DIB_RGB_COLORS, (VOID**)&lpBitmapBits2,NULL,0);
+      player.attack_sprite_3_cache=CreateDIBSection(NULL,&bi2,DIB_RGB_COLORS, (VOID**)&lpBitmapBits2,NULL,0);
+      player.attack_sprite_4_cache=CreateDIBSection(NULL,&bi2,DIB_RGB_COLORS, (VOID**)&lpBitmapBits2,NULL,0);
+
+      player.block_sprite_1_cache=CreateDIBSection(NULL,&bi2,DIB_RGB_COLORS, (VOID**)&lpBitmapBits2,NULL,0);
+      player.block_sprite_2_cache=CreateDIBSection(NULL,&bi2,DIB_RGB_COLORS, (VOID**)&lpBitmapBits2,NULL,0);
+      player.block_sprite_3_cache=CreateDIBSection(NULL,&bi2,DIB_RGB_COLORS, (VOID**)&lpBitmapBits2,NULL,0);*/
+
+      //printf("new sizes:%d %d\n",player.sprite_width,player.sprite_height);
+      /*player.current_draw_row=-1;
+      for (int a=player.sprite_miny;a<player.sprite_maxy;a++) {
+        RotateSpriteII(NULL, player.sprite_jump, player.sprite_jump_cache,0, LTGREEN, BLACK, -1, player.sprite_minx, player.sprite_miny, player.sprite_maxx, player.sprite_maxy, a); 
+        RotateSpriteII(NULL, player.sprite_1, player.sprite_1_cache,0, LTGREEN, BLACK, -1, player.sprite_minx, player.sprite_miny, player.sprite_maxx, player.sprite_maxy, a); 
+        RotateSpriteII(NULL, player.sprite_2, player.sprite_2_cache,0, LTGREEN, BLACK, -1, player.sprite_minx, player.sprite_miny, player.sprite_maxx, player.sprite_maxy, a); 
+
+        RotateSpriteII(NULL, player.attack_sprite_1, player.attack_sprite_1_cache,0, LTGREEN, BLACK, -1, player.sprite_minx, player.sprite_miny, player.sprite_maxx, player.sprite_maxy, a); 
+        RotateSpriteII(NULL, player.attack_sprite_2, player.attack_sprite_2_cache,0, LTGREEN, BLACK, -1, player.sprite_minx, player.sprite_miny, player.sprite_maxx, player.sprite_maxy, a); 
+        RotateSpriteII(NULL, player.attack_sprite_3, player.attack_sprite_3_cache,0, LTGREEN, BLACK, -1, player.sprite_minx, player.sprite_miny, player.sprite_maxx, player.sprite_maxy, a); 
+        RotateSpriteII(NULL, player.attack_sprite_4, player.attack_sprite_4_cache,0, LTGREEN, BLACK, -1, player.sprite_minx, player.sprite_miny, player.sprite_maxx, player.sprite_maxy, a); 
+
+        RotateSpriteII(NULL, player.block_sprite_1, player.block_sprite_1_cache,0, LTGREEN, BLACK, -1, player.sprite_minx, player.sprite_miny, player.sprite_maxx, player.sprite_maxy, a); 
+        RotateSpriteII(NULL, player.block_sprite_2, player.block_sprite_2_cache,0, LTGREEN, BLACK, -1, player.sprite_minx, player.sprite_miny, player.sprite_maxx, player.sprite_maxy, a); 
+        RotateSpriteII(NULL, player.block_sprite_3, player.block_sprite_3_cache,0, LTGREEN, BLACK, -1, player.sprite_minx, player.sprite_miny, player.sprite_maxx, player.sprite_maxy, a); 
+      }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*char txt3[10];
+  int print_1=frame_tick;
+  sprintf(txt3,"%d",print_1);  
+  GrPrint(hdc,0,32,txt3,c);*/
+
+  /*char txt3[10];
+  int print_1=player.time_breaker_recharge_timer;
+  sprintf(txt3,"%d",print_1);  
+  GrPrint(hdc,0,32,txt3,c);
+
+
+  char txt4[10];
+  int print_2= player.time_breaker_cooldown;
+  sprintf(txt4,"%d",print_2);  
+  GrPrint(hdc,0,48,txt4,c);
+
+
+  char txt5[10];
+  int print_3=player.time_breaker_units;
+  sprintf(txt5,"%d",print_3);  
+  GrPrint(hdc,0,64,txt5,c);*/
+
+
+
+
+
+
+
+  /*for (int i=player.block_health;i>0;i--) {
+    GrCircle(hdc,player.sprite_x+8*i,player.sprite_y+32,2,LTGRAY,LTGRAY);
+  }*/
+
+  //Print Player Block Health
+  //int print_block_health=player.block_health;
+  //sprintf(txt,"%d",print_block_health);
+  //GrPrint(hDC,mouse_x,mouse_y+32,txt, BLACK);
+
+
+/*  char txt3[19];
+  int print_dynrenderdist=dyn_vrenderdist;
+  sprintf(txt3,"Render Distance: %d",print_dynrenderdist);  
+  GrPrint(hdc,0,32,txt3,c);
+
+
+  char txt4[10];
+  int print_left = player.previous_web_placed;
+  int print_left2= player.on_ground_id;
+  sprintf(txt4,"%d webplaced: %d",print_left2, print_left);  
+  GrPrint(hdc,0,48,txt4,c);*/
+
+
+  /*char txt5[10];
+  int print_speed=player.speed;
+  int print_grav_speed=player.grav;
+  sprintf(txt5,"Speed:%d  %d",print_grav_speed, print_speed);  
+  GrPrint(hdc,0,64,txt5,c);*/
+  //GrPrint(hwnd,hdc,ps,0,16,_txt2,RGB(RandNum(0,255),RandNum(0,255),RandNum(0,255)));
+
+
+  /*char txt6[16];
+  int print_jump=player.in_air_timer;
+  sprintf(txt6,"inairtimer: %d",print_jump);  
+  GrPrint(hdc,0,80,txt6,c);*/
+
+
+
+/*struct custard
+{
+  int cream;
+};
+
+int amount=10;
+struct custard* Custard;*/
+
+/*void InitCustard()
+{
+  /*Custard=(struct custard*)malloc(amount*sizeof(struct custard));
+  for (int du=0;du<amount;du++) {
+    Custard[du].cream=du*2;
+  }*/
+  /*for (int du=0;du<amount;du++) {
+    printf("%d",Custard[du].cream);
+  }*/
+  /*free(Custard);
+  Custard=NULL;
+}*/
+
+/*int* ptr;
+
+void initdum()
+{
+  ptr=(int*)malloc(size*sizeof(int));
+  for (int du=0;du<size;du++) {
+    ptr[du]=du*2;
+  }
+  for (int du=0;du<size;du++) {
+    printf("%d",ptr[du]);
+  }
+}*/
+
+//struct Custard Custards[size];
+
+/*int palette_dark_arr[COLORS_NUM]={
+BLACK,
+BLUE,
+GREEN,
+CYAN,
+RED,
+PURPLE,
+BROWN,
+LTGRAY,
+DKGRAY,
+LTBLUE,
+LTGREEN,
+LTCYAN,
+LTRED,
+LTPURPLE,
+YELLOW,
+WHITE
+};*/
+
+
+
+

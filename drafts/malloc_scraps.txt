@@ -1,0 +1,124 @@
+  /*
+    IMPORTANT:
+    When calloc-ing from saves it MUST be from lowest to highest
+  */
+
+  /*
+  printf("grid:     %d\n",(GRID_NUM*(sizeof(struct grid))));
+  printf("vgrid:    %d\n",(VGRID_NUM*sizeof(struct vgrid)));
+  Grid=(struct grid*)calloc(GRID_NUM,(sizeof(struct grid)));
+  VGrid=(struct vgrid*)calloc(VGRID_NUM,sizeof(struct vgrid));
+  //printf("\nVGridNum:%d\n",VGRID_NUM);  
+
+
+  printf("Enemy:    %d\n",ENEMY_NUM*sizeof(struct enemy));
+  printf("NodeGrid: %d\n",(MAP_NODE_NUM*sizeof(struct node)));
+  printf("Ground:   %d\n",((GROUND_NUM+MAX_WEB_NUM)*(sizeof(struct GroundLine))));
+
+  int GroundMemSize=(GROUND_NUM+MAX_WEB_NUM)*(sizeof(struct GroundLine));
+  int EnemyMemSize=ENEMY_NUM*sizeof(struct enemy);
+  int NodeGridMemSize=MAP_NODE_NUM*sizeof(struct node);
+
+  if (NodeGridMemSize>GroundMemSize && NodeGridMemSize>EnemyMemSize) { //large map, more node grids 
+    if (EnemyMemSize>GroundMemSize) { //more enmy
+      Ground=(struct GroundLine*)calloc((GROUND_NUM+MAX_WEB_NUM),(sizeof(struct GroundLine)));//0
+      Enemy=(struct enemy*)calloc(ENEMY_NUM,sizeof(struct enemy));//1
+      printf("\nMore Enemy");
+    } else {//more rground
+      Enemy=(struct enemy*)calloc(ENEMY_NUM,sizeof(struct enemy));//1
+      Ground=(struct GroundLine*)calloc((GROUND_NUM+MAX_WEB_NUM),(sizeof(struct GroundLine)));//0
+      printf("\nMore Ground");
+    }
+    NodeGrid=(struct node*)calloc(MAP_NODE_NUM,sizeof(struct node));//2
+    printf("\nLarge Map");
+  } else if (NodeGridMemSize<GroundMemSize && NodeGridMemSize<EnemyMemSize) {//tiny map, more entities
+    NodeGrid=(struct node*)calloc(MAP_NODE_NUM,sizeof(struct node));//2
+    if (EnemyMemSize>GroundMemSize) { //more enmy
+      Ground=(struct GroundLine*)calloc((GROUND_NUM+MAX_WEB_NUM),(sizeof(struct GroundLine)));//0
+      Enemy=(struct enemy*)calloc(ENEMY_NUM,sizeof(struct enemy));//1
+      printf("More Enemy");
+    } else {//more rground
+      Enemy=(struct enemy*)calloc(ENEMY_NUM,sizeof(struct enemy));//1
+      Ground=(struct GroundLine*)calloc((GROUND_NUM+MAX_WEB_NUM),(sizeof(struct GroundLine)));//0
+      printf("More Ground");
+    }
+    printf("Small Map");
+  } else { //other conditions
+    if (EnemyMemSize>GroundMemSize) { //enemy overload
+      Ground=(struct GroundLine*)calloc((GROUND_NUM+MAX_WEB_NUM),(sizeof(struct GroundLine)));//0
+      NodeGrid=(struct node*)calloc(MAP_NODE_NUM,sizeof(struct node));//2
+      Enemy=(struct enemy*)calloc(ENEMY_NUM,sizeof(struct enemy));//1
+      printf("other condition, alot of enemies");
+    } else { //ground overload
+      Enemy=(struct enemy*)calloc(ENEMY_NUM,sizeof(struct enemy));//1
+      NodeGrid=(struct node*)calloc(MAP_NODE_NUM,sizeof(struct node));//2
+      Ground=(struct GroundLine*)calloc((GROUND_NUM+MAX_WEB_NUM),(sizeof(struct GroundLine)));//0
+      printf("other condition, alot of grounds");
+    }
+  }*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              //printf("RenderEnemies:%d\n",ENEMY_NUM*sizeof(int));
+              //printf("RenderGrounds:%d\n",(GROUND_NUM+MAX_WEB_NUM)*sizeof(int));
+
+            //Begin Malloc
+            /*if (GROUND_NUM>ENEMY_NUM) {
+              player_render_enemies=(int*)malloc(ENEMY_NUM*sizeof(int));
+              saved_enemy_type=(int*)malloc(ENEMY_NUM*sizeof(int));
+              saved_enemy_x=(double*)malloc(ENEMY_NUM*sizeof(double));
+              saved_enemy_y=(double*)malloc(ENEMY_NUM*sizeof(double));
+
+              printf("RenderEnemies:%d\n",ENEMY_NUM*sizeof(int));
+              printf("@@            %d\n",GROUND_NUM*sizeof(bool));
+              printf("@@            %d\n",GROUND_NUM*sizeof(int));
+
+
+            //Malloc Saved Grounds
+              saved_ground_is_ghost=(bool*)malloc(GROUND_NUM*sizeof(bool));
+              saved_ground_color=(int*)malloc(GROUND_NUM*sizeof(int));
+              saved_ground_type=(int*)malloc(GROUND_NUM*sizeof(int));
+
+              player_render_grounds=(int*)malloc((GROUND_NUM+MAX_WEB_NUM)*sizeof(int));
+              printf("RenderGrounds:%d\n",(GROUND_NUM+MAX_WEB_NUM)*sizeof(int));
+              printf("@@            %d\n",GROUND_NUM*sizeof(double));
+
+              saved_ground_x1=(double*)malloc(GROUND_NUM*sizeof(double));
+              saved_ground_y1=(double*)malloc(GROUND_NUM*sizeof(double));
+              saved_ground_x2=(double*)malloc(GROUND_NUM*sizeof(double));
+              saved_ground_y2=(double*)malloc(GROUND_NUM*sizeof(double));
+              saved_ground_x3=(double*)malloc(GROUND_NUM*sizeof(double));
+              saved_ground_y3=(double*)malloc(GROUND_NUM*sizeof(double));
+            //saved_ground_text=(char**)malloc(GROUND_NUM*(sizeof(char*)));
+            } else {
+            //Malloc Saved Grounds
+              saved_ground_is_ghost=(bool*)malloc(GROUND_NUM*sizeof(bool));
+              saved_ground_color=(int*)malloc(GROUND_NUM*sizeof(int));
+              saved_ground_type=(int*)malloc(GROUND_NUM*sizeof(int));
+
+              player_render_grounds=(int*)malloc((GROUND_NUM+MAX_WEB_NUM)*sizeof(int));
+              saved_ground_x1=(double*)malloc(GROUND_NUM*sizeof(double));
+              saved_ground_y1=(double*)malloc(GROUND_NUM*sizeof(double));
+              saved_ground_x2=(double*)malloc(GROUND_NUM*sizeof(double));
+              saved_ground_y2=(double*)malloc(GROUND_NUM*sizeof(double));
+              saved_ground_x3=(double*)malloc(GROUND_NUM*sizeof(double));
+              saved_ground_y3=(double*)malloc(GROUND_NUM*sizeof(double));
+            //saved_ground_text=(char**)malloc(GROUND_NUM*(sizeof(char*)));
+
+              player_render_enemies=(int*)malloc(ENEMY_NUM*sizeof(int));
+              saved_enemy_type=(int*)malloc(ENEMY_NUM*sizeof(int));
+              saved_enemy_x=(double*)malloc(ENEMY_NUM*sizeof(double));
+              saved_enemy_y=(double*)malloc(ENEMY_NUM*sizeof(double));
+            }*/
+
