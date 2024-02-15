@@ -1208,3 +1208,40 @@ WHITE
             move_y(-sin(-launch_angle));
       }*/
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //GrPrint(hwnd,hdc,ps,0,0,_txt,RGB(RandNum(0,255),RandNum(0,255),RandNum(0,255)));
+
+
+//Print player details
+
+  //print player web amount
+  /*char txt[2];
+  int print_web_num=player.max_web_num-player.placed_web_num;
+  sprintf(txt,"%d",print_web_num);
+  if (!IsInvertedBackground()) {
+    GrPrint(hDC,mouse_x+32,mouse_y+32,txt,WHITE);
+  } else {
+    GrPrint(hDC,mouse_x+32,mouse_y+32,txt,BLACK);
+  }*/
+
+  //print player health
+  //int print_player_health=player.health;
+  //sprintf(txt,"%d",print_player_health);
+  //GrPrint(hDC,mouse_x-32,mouse_y+32,txt,LTRED);
+
+
