@@ -1,0 +1,10 @@
+60+33, //"You Are A Pirate - Alestorm", //"(2011)",
+180+39, //"Bad Apple - Masayoshi Minoshima", //"(1998)",
+120+53, //"Caramelldansen - Caramella Girls", //"Supergott (2001)",
+180+6,  //"Aftermath - Caravan Palace", //"Robot Face (2015)",
+120+47, //"Memento Mori - Crywank", //"Tomorrow Is Nearly Yesterday And Everyday Is Stupid (2013)",
+180+19, //"Beautiful Alien - Darude ft. AI AM", //"Moments (2015)",
+180+45, //"Sandstorm - Darude", //"Before The Storm (2000)",
+180+28, //"Buttercup - Jack Stauber", //"Pop Food (2017)",
+240+40, //"Dreamscape - 009 Sound System", //"(2009)",
+180+46 //"New Day (Wazari Remix) - DJ Diskant" //"New Day (2007)"

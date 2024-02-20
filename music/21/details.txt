@@ -1,0 +1,10 @@
+240+45, //"Blue - Eiffel65", //"Europop (1999)",
+180+38, //"Breating - Yellowcard", //"Ocean Avenue (2003)",
+37, //"Beware The Friendly Stranger - Boards of Canada", //"Geogaddi (2002)",
+240+20, //"Boulevard of Broken Dreams - Green Day", //"American Idiot (2004)",
+300+48, //"Tears Don't Fall - Bullet For My Valentine", //"The Poison (2005)",
+180+39, //"Just Can't Get Enough - Black Eyed Peas", //"The Beginning (2010)",
+120+46, //"Axel F - Crazy Frog", //"Crazy Frog (2005)",
+120+3, //"Her - Eery", //"(2016)",
+300+15, //"Hey Man Nice Shot - Filter", //"Short Bus (1995)",
+180+33 //"Dragostea Din Tei - O Zone" //"DiscO-Zone (2003)"
