@@ -1,0 +1,10 @@
+180+16, //"Dota - Basshunter", //"LOL (2006)",
+180+1, //"Ring Dinge Ding - DJ Splash", //"(2005)",
+420+24, //"Through Fire and The Flames - Dragonforce", //"Inhuman Rage (2005)",
+120+5, //"Miracle Man - Oliver Tree", //"Ugly Is Beautiful (2020)",
+180+49, //"Hey Ya! - Outkast", //"Speakerboxxx/The Love Below (2003)",
+240+43, //"Time - Pink Floyd", //"The Dark Side of the Moon (1973)",
+240+10, //"Pumped Up Kicks - Foster The People", //"Bridge and Law Remix (2015)",
+180+52, //"The Last Stand - Sabaton (Russian Cover)", //"Radio Tapok (2021)",
+180+55, //"The Last Stand - Sabaton", //"The Last Stand (2016)",
+420+55; //"Roundabout - Yes (2008 Remaster)"; //"Yes (2008)";
